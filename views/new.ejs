@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de Clientes</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Preencha os dados abaixo para salvar o cliente.</p>
+    <form action="<%= action %>" method="POST">
+      <p>
+          <label>Nome: <input type="text" name="nome" value="<%= doc.nome %>" /></label>
+      </p>
+      <p>
+          <label>Idade: <input type="number" name="idade" value="<%= doc.idade %>" /></label>
+      </p>
+      <p>
+          <label>UF: <select name="uf">
+                  <% const s = "selected" %>
+                  <option <% if(doc.uf === "RS") { %><%= s %><% } %>>BA</option>
+                  <option <% if(doc.uf === "SC") { %><%= s %><% } %>>MG</option>
+                  <option <% if(doc.uf === "PR") { %><%= s %><% } %>>ES</option>
+                  <option <% if(doc.uf === "PR") { %><%= s %><% } %>>RJ</option>
+                  <option <% if(doc.uf === "PR") { %><%= s %><% } %>>SP</option>
+                  <option <% if(doc.uf === "PR") { %><%= s %><% } %>>PA</option>
+                  <option <% if(doc.uf === "PR") { %><%= s %><% } %>>RS</option>
+                  <option <% if(doc.uf === "PR") { %><%= s %><% } %>>TO</option>
+                  <!-- coloque os estados que quiser -->
+              </select></label>
+      </p>
+      <p>
+          <a href="/">Cancelar</a> | <input type="submit" value="Salvar" />
+      </p>
+  </form>
+  </body>
+</html>
